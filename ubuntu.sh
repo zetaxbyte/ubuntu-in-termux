@@ -70,6 +70,7 @@ unset LD_PRELOAD
 command="proot"
 ## uncomment following line if you are having FATAL: kernel too old message.
 #command+=" -k 4.14.81"
+command+=" -b /data/data/com.termux/files/usr/tmp:/tmp"
 command+=" --link2symlink"
 command+=" -0"
 command+=" -r $directory"
