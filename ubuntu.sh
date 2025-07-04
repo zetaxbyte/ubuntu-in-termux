@@ -48,6 +48,8 @@ proot --link2symlink tar -zxf $cur/ubuntu.tar.gz --exclude='dev'||:
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m The ubuntu rootfs have been successfully decompressed!\n"
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m Fixing the resolv.conf, so that you have access to the internet\n"
 printf "nameserver 8.8.8.8\nnameserver 8.8.4.4\n" > etc/resolv.conf
+printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m fix: add IPv4 and IPv6 localhost entries to /etc/hosts\n"
+printf "127.0.0.1 localhost\n::1 ip6-localhost" > /etc/hosts
 stubs=()
 stubs+=('usr/bin/groups')
 for f in ${stubs[@]};do
