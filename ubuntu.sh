@@ -137,3 +137,12 @@ else
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;203m[ERROR]:\e[0m \x1b[38;5;87m Installation aborted.\n"
 printf "\e[0m"
 fi
+
+sleep 1
+echo -e "\n\033[0mLogin To ubuntu now... \n"
+sleep 1
+echo -e "please wait!!! \n"
+touch ubuntu-fs/root/.hushlogin
+sleep 1
+echo -e "\033[92mdone ✓\n\033[0m"
+./startubuntu.sh
