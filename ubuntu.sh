@@ -135,3 +135,20 @@ else
 printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;203m[ERROR]:\e[0m \x1b[38;5;87m Installation aborted.\n"
 printf "\e[0m"
 fi
+
+if [ -f ubuntu-fs/etc/hosts ]; then
+echo -e "\n\033[93mplease wait!...\033[0m\n"
+sleep 1
+echo -e "\033[96mfinal steps!\033[0m\n"
+sleep 1
+printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m fix: groups: cannot find name for group ID #########\n"
+touch ubuntu-fs/root/.hushlogin
+printf "\x1b[38;5;214m[${time1}]\e[0m \x1b[38;5;83m[Installer thread/INFO]:\e[0m \x1b[38;5;87m fix: add IPv4 and IPv6 localhost entries to /etc/hosts\n"
+printf "127.0.0.1 localhost\n::1 ip6-localhost\n" > ubuntu-fs/etc/hosts
+sleep 1
+echo -e "\n\033[92mDone✓\033[0m\n"
+sleep 1
+clear
+echo -e "\033[92mWelcome To Ubuntu-Base 22\033[0m\n"
+./startubuntu.sh
+fi
